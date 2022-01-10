@@ -177,4 +177,6 @@
 
   表示替换查找到的结果 
   
-  
+  # 查看系统版本
+  cat /proc/version
+  cat /etc/redhat-release
