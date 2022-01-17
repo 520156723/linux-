@@ -69,6 +69,9 @@
 
    git remote set-url origin git@codeup.aliyun.com:6128d2e757e7cd986dfae5ab/be-hr/be-hr-cts-api.git
    
+- 查看远程仓库地址
+   git remote -v
+   
 -  grep 排除, 排除 a 或 b 或 c 的行
 
    ```shell
