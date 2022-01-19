@@ -82,6 +82,14 @@
    grep -v 'redis \|lettuce\|Connection' error_2021-12-27_1.log
    ```
    
+- git pull 失败
+git clean  -d  -fx ""
+其中 
+x  -----删除忽略文件已经对git来说不识别的文件
+d  -----删除未被添加到git的路径中的文件
+f  -----强制运行
+或者 stash 在pull
+
 # 加压解压
    
 - 解压jar包
