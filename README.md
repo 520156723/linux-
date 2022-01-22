@@ -197,3 +197,7 @@ f  -----强制运行
   cat /proc/version
   cat /etc/redhat-release
   
+  # if
+  if [ -z $JAVA_BIN ]
+  [-z string] “string”的长度为零则为真 
+  [-n string] or [string] “string”的长度为非零non-zero则为真 
