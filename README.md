@@ -201,3 +201,14 @@ f  -----强制运行
   if [ -z $JAVA_BIN ]
   [-z string] “string”的长度为零则为真 
   [-n string] or [string] “string”的长度为非零non-zero则为真 
+  
+  - 根据上一条命令是否成功，控制流程
+  $? 表示上一条命令返回值，如果上一条命令成功执行，返回0，否则返回1.
+  if [ $? -eq 0 ];
+  then
+    tail -n 30 $serverDir/logs/catalina.out
+    echo "\n\n\n----------------$APP_WAR is up on $(date +%Y%m%d%H%M%S)----------------\n\n\n"
+    exit 0
+  else
+    exit $?
+  fi 
