@@ -212,3 +212,8 @@ f  -----强制运行
   else
     exit $?
   fi 
+  # jar相关
+  解压jar包到当前目录
+  jar xf xxx.jar
+
+  
