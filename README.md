@@ -4,7 +4,7 @@
 - -m 设置最大传输时间
 - -s 不输出任何东西
 - -w 获取请求结果，常用于诊断
-  - 示例 curl -s -w %{http_code} 获取http响应码
+  - 示例 curl -s -w %{http_code} http://localhost:8055/ping -o /dev/null  仅获取http响应码
 
 # git
 
@@ -28,6 +28,8 @@
 
 - 更改分支名 git branch -m 原名 新
 
+- 合并新分支 git merge A B  把A合到B
+
 - 合并分支A到当前 git merge A
 
 - 标签 tag
@@ -35,11 +37,11 @@
   - 显示所有标签 git tag
   - 显示指定标签 git show v1.0
   - 删除标签 git tag -d v1.0
-  
-- rebase有冲突后解决 
+
+- rebase有冲突后解决
   -  放弃 git rebase --abort
   - 继续git rebase –continue
-  
+
 - 暂存不提交
 
   - 保存
@@ -68,10 +70,10 @@
 - 换远程仓库目录
 
    git remote set-url origin git@codeup.aliyun.com:6128d2e757e7cd986dfae5ab/be-hr/be-hr-cts-api.git
-   
+
 - 查看远程仓库地址
    git remote -v
-   
+
 -  grep 排除, 排除 a 或 b 或 c 的行
 
    ```shell
@@ -81,17 +83,17 @@
    ```
    grep -v 'redis \|lettuce\|Connection' error_2021-12-27_1.log
    ```
-   
+
 - git pull 失败
 git clean  -d  -fx ""
-其中 
+其中
 x  -----删除忽略文件已经对git来说不识别的文件
 d  -----删除未被添加到git的路径中的文件
 f  -----强制运行
 或者 stash 在pull
 
 # 加压解压
-   
+
 - 解压jar包
 
   Jar -xvf xxx.jar
@@ -99,7 +101,7 @@ f  -----强制运行
   - 解压到新目录tmp
 
     Unzip xxx.jar -d tmp
-  
+
 - 解压tar 解压到b目录下
 
   tar -zxvf a.zip -C /home/web/b
@@ -112,7 +114,7 @@ f  -----强制运行
 
   md5sum 目标文件
 
-- 多级创建目录 mkdir -p 
+- 多级创建目录 mkdir -p
 
 - 修改默认 linux dash
   dpkg-reconfigure dash 改为no
@@ -129,7 +131,7 @@ f  -----强制运行
 
   往web下添加了新文件夹py_virtualenv
   scp -r py_virtualenv web@172.16.57.24:/home/web
-  
+
 # 端口相关
 - 看端口对应的pid
   lsof -i:端口号
@@ -138,23 +140,23 @@ f  -----强制运行
 - 查看某ip的 端口是否打开
 
   `nc -zv 192.168.1.15  22`  查看192.168.1.15的22是否打开
-  
+
 # 查看ip
 - 查看外网ip
   curl ifconfig.me
-- 
+-
 
 # 文件相关
 - 从⾼到低依次显示当前目录的⽂件和⽬录⼤⼩
   du -sk * | sort -rn
 - 查看文件时间
 
-  stat file1 
+  stat file1
 
   - 修改mtime
 
     ```shell
-    touch -mt 1802241622 file1 
+    touch -mt 1802241622 file1
     ```
 
     　　1802241622 代表：
@@ -166,12 +168,12 @@ f  -----强制运行
     　　　　24 ---> 24号
 
     　　　　1622 --->时间16:22
-        
+
 - 查看md5
 
   md5sum 目标文件
 
-- 多级创建目录 mkdir -p 
+- 多级创建目录 mkdir -p
 
 # 定时脚本
   crontab -e：编辑某个用户的crontab文件内容。如果不指定用户，则表示编辑当前用户的crontab文件
@@ -191,17 +193,17 @@ f  -----强制运行
 
   {} \
 
-  表示替换查找到的结果 
-  
+  表示替换查找到的结果
+
   # 查看系统版本
   cat /proc/version
   cat /etc/redhat-release
-  
+
   # if
   if [ -z $JAVA_BIN ]
-  [-z string] “string”的长度为零则为真 
-  [-n string] or [string] “string”的长度为非零non-zero则为真 
-  
+  [-z string] “string”的长度为零则为真
+  [-n string] or [string] “string”的长度为非零non-zero则为真
+
   - 根据上一条命令是否成功，控制流程
   $? 表示上一条命令返回值，如果上一条命令成功执行，返回0，否则返回1.
   if [ $? -eq 0 ];
@@ -211,9 +213,7 @@ f  -----强制运行
     exit 0
   else
     exit $?
-  fi 
+  fi
   # jar相关
   解压jar包到当前目录
   jar xf xxx.jar
-
-  
